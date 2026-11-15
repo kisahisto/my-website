@@ -1,0 +1,776 @@
+
+/* ==================================
+   PARFUM — VANILLA EDITION
+   ================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f8f0df;
+    color: #392c20;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+
+/* VANILLA BACKGROUND */
+
+.background-glow {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 15% 15%,
+            rgba(255, 230, 180, 0.8),
+            transparent 45%
+        ),
+
+        radial-gradient(
+            ellipse at 85% 20%,
+            rgba(235, 207, 157, 0.55),
+            transparent 45%
+        ),
+
+        radial-gradient(
+            ellipse at 50% 55%,
+            rgba(255, 246, 220, 0.95),
+            transparent 55%
+        ),
+
+        radial-gradient(
+            ellipse at 20% 90%,
+            rgba(220, 187, 139, 0.4),
+            transparent 45%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fff5df,
+            #f7ead1,
+            #f4e4c7,
+            #fff8e9
+        );
+
+    background-size: 200% 200%;
+    animation: vanillaGlow 15s ease-in-out infinite alternate;
+}
+
+@keyframes vanillaGlow {
+
+    0% {
+        background-position: 0% 0%;
+        filter: brightness(1);
+    }
+
+    50% {
+        background-position: 100% 50%;
+        filter: brightness(1.07);
+    }
+
+    100% {
+        background-position: 0% 100%;
+        filter: brightness(1.02);
+    }
+}
+
+
+/* HEADER */
+
+.header {
+    min-height: 125px;
+    padding: 20px 4%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+
+    border-bottom: 1px solid rgba(169, 130, 78, 0.25);
+
+    background: rgba(255, 249, 234, 0.85);
+    backdrop-filter: blur(18px);
+
+    position: relative;
+    z-index: 10;
+}
+
+.logo,
+.footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 57px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 0.8;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #443321;
+}
+
+.logo span,
+.footer-logo span {
+    display: block;
+    text-align: center;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 6px;
+    margin-top: 13px;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    color: #59452f;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #bd9252;
+}
+
+
+/* CONTACTS */
+
+.header-contacts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    text-decoration: none;
+    color: #59452f;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    padding: 11px 13px;
+
+    border: 1px solid rgba(174, 137, 82, 0.35);
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.5);
+    transition: 0.3s;
+}
+
+.contact-item:hover {
+    background: #eee0c2;
+    border-color: #c7a36a;
+    box-shadow: 0 0 18px rgba(201, 165, 106, 0.4);
+    transform: translateY(-3px);
+}
+
+.vpn-label {
+    width: 100%;
+    text-align: right;
+
+    color: #a78045;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 650px;
+    padding: 100px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 650px;
+    z-index: 2;
+}
+
+.subtitle {
+    color: #a9844c;
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(60px, 7vw, 105px);
+    line-height: 0.95;
+    font-weight: 500;
+}
+
+.hero h1 em {
+    color: #b18a50;
+}
+
+.hero-content p {
+    margin-top: 35px;
+    max-width: 490px;
+
+    color: #786b58;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.hero-bottom {
+    margin-top: 45px;
+
+    color: #a9844c;
+    font-size: 11px;
+    letter-spacing: 5px;
+}
+
+
+/* HERO DECORATION */
+
+.hero-decoration {
+    width: 450px;
+    height: 450px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gold-circle {
+    position: absolute;
+
+    width: 370px;
+    height: 370px;
+
+    border: 1px solid rgba(181, 143, 82, 0.65);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 30px rgba(216, 183, 125, 0.3),
+        inset 0 0 30px rgba(216, 183, 125, 0.15);
+
+    animation: vanillaCircle 4s infinite alternate;
+}
+
+@keyframes vanillaCircle {
+
+    from {
+        box-shadow: 0 0 15px rgba(216, 183, 125, 0.25);
+    }
+
+    to {
+        box-shadow: 0 0 65px rgba(216, 183, 125, 0.5);
+    }
+
+}
+
+.hero-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 55px;
+    text-align: center;
+    color: #a9844c;
+    letter-spacing: 5px;
+}
+
+.hero-number {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 65px;
+
+    color: rgba(169, 132, 76, 0.3);
+}
+
+
+/* CATALOG */
+
+.catalog {
+    padding: 100px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.section-heading h2,
+.price-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 5vw, 65px);
+    font-weight: 500;
+}
+
+.section-heading p {
+    margin-top: 10px;
+    color: #a9844c;
+    letter-spacing: 5px;
+    font-size: 12px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px;
+
+    max-width: 1150px;
+    margin: auto;
+}
+
+
+/* PRODUCT CARDS */
+
+.product-card {
+    position: relative;
+    padding: 25px;
+
+    background: rgba(255, 251, 240, 0.85);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(177, 143, 91, 0.3);
+    border-radius: 8px;
+
+    transition: 0.4s ease;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    border-color: #c9a66a;
+
+    box-shadow:
+        0 0 8px rgba(218, 185, 125, 0.8),
+        0 0 25px rgba(218, 185, 125, 0.55),
+        0 0 55px rgba(218, 185, 125, 0.3);
+
+    transform: translateY(-8px);
+}
+
+.product-number {
+    color: #a9844c;
+    letter-spacing: 3px;
+    font-size: 10px;
+}
+
+
+/* PRODUCT IMAGES */
+
+.product-image {
+    height: 370px;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.image-glow {
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    background: rgba(224, 195, 143, 0.4);
+    filter: blur(45px);
+
+    transition: 0.4s;
+}
+
+.product-card:hover .image-glow {
+    background: rgba(221, 183, 116, 0.6);
+    transform: scale(1.3);
+}
+
+.product-image img {
+    position: relative;
+    z-index: 1;
+
+    max-width: 90%;
+    max-height: 330px;
+
+    object-fit: contain;
+
+    transition: transform 0.6s ease;
+    -webkit-user-drag: none;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.08);
+}
+
+
+/* PRODUCT INFO */
+
+.product-info {
+    padding: 20px 5px;
+}
+
+.brand {
+    color: #a9844c;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.product-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.description {
+    color: #786b58;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-top: 12px;
+    min-height: 48px;
+}
+
+
+/* PRODUCT PRICES */
+
+.product-prices {
+    border-top: 1px solid rgba(177, 143, 91, 0.3);
+    margin-top: 25px;
+    padding-top: 18px;
+}
+
+.product-prices div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid rgba(177, 143, 91, 0.17);
+}
+
+.product-prices span {
+    font-size: 12px;
+    color: #786b58;
+}
+
+.product-prices strong {
+    color: #a9844c;
+    font-size: 15px;
+}
+
+
+/* DELIVERY */
+
+.delivery-info {
+    max-width: 850px;
+    margin: 75px auto 0;
+
+    padding: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    background: rgba(239, 224, 194, 0.65);
+
+    border: 1px solid rgba(177, 143, 91, 0.35);
+    border-radius: 8px;
+
+    text-align: left;
+
+    box-shadow: 0 0 30px rgba(199, 165, 106, 0.15);
+}
+
+.delivery-icon {
+    color: #a9844c;
+    font-size: 55px;
+}
+
+.delivery-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #8c6b3d;
+}
+
+.delivery-info p {
+    margin-top: 7px;
+    color: #786b58;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* PRICES */
+
+.price-section {
+    text-align: center;
+    padding: 100px 20px;
+
+    background: rgba(232, 214, 180, 0.3);
+}
+
+.price-list {
+    max-width: 600px;
+    margin: 45px auto 25px;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 22px 10px;
+
+    border-bottom: 1px solid rgba(177, 143, 91, 0.35);
+
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.price-item strong {
+    color: #a9844c;
+    font-size: 18px;
+    letter-spacing: 0;
+}
+
+.price-note {
+    color: #8b7a61;
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #392e21;
+    color: #fff4df;
+
+    text-align: center;
+
+    padding: 75px 20px 25px;
+}
+
+.footer-logo {
+    font-size: 60px;
+    color: #fff4df;
+}
+
+.footer-logo span {
+    color: #d9bf91;
+}
+
+.footer-description {
+    color: #d8cbb5;
+    font-size: 12px;
+    margin: 30px 0;
+    letter-spacing: 1px;
+}
+
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 22px;
+
+    margin: 40px 0 65px;
+}
+
+.footer-contacts a {
+    color: #e9d6b4;
+    text-decoration: none;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.footer-contacts a:hover {
+    color: white;
+    text-shadow: 0 0 15px #e4c58e;
+}
+
+.footer-vpn {
+    color: #d9bf91;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.footer-bottom {
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255,255,255,0.12);
+
+    color: #c2b39a;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+
+/* TABLETS */
+
+@media (max-width: 1000px) {
+
+    .header {
+        flex-direction: column;
+        padding: 25px 15px;
+    }
+
+    .header-contacts {
+        max-width: 650px;
+    }
+
+    .vpn-label {
+        text-align: center;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    .hero {
+        padding: 75px 7%;
+        min-height: auto;
+    }
+
+    .hero-decoration {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .catalog {
+        padding: 75px 5%;
+    }
+
+    .product-image {
+        height: 320px;
+    }
+
+    .product-image img {
+        max-height: 290px;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 48px;
+    }
+
+    .header-contacts {
+        gap: 8px;
+    }
+
+    .contact-item {
+        padding: 9px 10px;
+        font-size: 10px;
+    }
+
+    .hero h1 {
+        font-size: 54px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .section-heading h2,
+    .price-section h2 {
+        font-size: 42px;
+    }
+
+    .product-card {
+        padding: 17px;
+    }
+
+    .product-info h3 {
+        font-size: 32px;
+    }
+
+    .price-item {
+        font-size: 10px;
+    }
+
+    .price-item strong {
+        font-size: 15px;
+    }
+
+    .delivery-info {
+        padding: 20px 15px;
+        gap: 12px;
+    }
+
+    .delivery-info h3 {
+        font-size: 24px;
+    }
+
+    .delivery-info p {
+        font-size: 11px;
+    }
+
+    .delivery-icon {
+        font-size: 40px;
+    }
+
+    .footer-contacts a {
+        font-size: 10px;
+    }
+
+    .footer-bottom {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+}
